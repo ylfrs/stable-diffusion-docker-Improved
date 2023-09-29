@@ -20,7 +20,7 @@ Now with SDXL support.
 * [Photopea Webui extension](https://github.com/yankooliveira/sd-webui-photopea-embed)
 * [BatchLinks Downloader extension](https://github.com/etherealxx/batchlinks-webui)
 * [Inpaint Anything extension](https://github.com/Uminosachi/inpaint-anything)
-* [Infinite IOmage Browsing extension](https://github.com/zanllp/sd-webui-infinite-image-browsing)
+* [Infinite Image Browsing extension](https://github.com/zanllp/sd-webui-infinite-image-browsing)
 * [Locon extension](
   https://github.com/ashleykleynhans/a1111-sd-webui-locon)
 * [roop extension](https://github.com/s0md3v/sd-webui-roop) 0.0.2
