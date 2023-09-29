@@ -40,12 +40,10 @@ Now with SDXL support.
 
 ## Available on RunPod
 
-This image is designed to work on [RunPod](https://runpod.io?ref=2xxro4sy).
-You can use my custom [RunPod template](
-https://runpod.io/gsc?template=ya6013lj5a&ref=2xxro4sy)
-to launch it on RunPod.
+This image is designed to work on [RunPod](https://runpod.io). It's a slightly modified version of [ashleykleynhan's stable-diffusion-docker](
+ttps://github.com/ashleykleynhans/stable-diffusion-docker), which can be run directly from [Runpod here](https://runpod.io/gsc?template=ya6013lj5a&ref=2xxro4sy)
 
-## Building the Docker image
+## How to actually build the Docker image in Windows
 
 Since the Stable Diffusion models are pretty large, you will need at least
 8GB of system memory (not GPU VRAM) to build this image.
@@ -54,21 +52,26 @@ The image **CAN** be built on a `t3a.large` AWS EC2 instance
 which has 2 x vCPU and 8GB of system memory.  It **CANNOT** be built on
 any instances with less memory, eg. `t3a.medium`.
 
+Create a dummy folder on your machine so that you don't clutter things up. Anywhere you want.
+
 ```bash
-# Clone the repo
+# Clone the repo into this folder
+cd User/You/DummyFolder
 git clone https://github.com/ylfrs/stable-diffusion-docker-Improved.git
+```
+The repo link should be your modified repository. 
 
 # Download the models
-cd stable-diffusion-docker-Improved
-wget https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned.safetensors -O v1-5-pruned.safetensors
-wget https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors -O vae-ft-mse-840000-ema-pruned.safetensors
-wget https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0_0.9vae.safetensors -O sd_xl_base_1.0_0.9vae.safetensors
-wget https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0_0.9vae.safetensors -O sd_xl_refiner_1.0_0.9vae.safetensors
-wget https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/resolve/main/sdxl_vae.safetensors -O sdxl_vae.safetensors
-wget https://civitai.com/api/download/models/169921 -O realvisxlV20_v20Bakedvae.safetensors
 
+DON'T use wget to download the models into the folder. It's slow, and as I had to find out for myself, the syntax in Windows is different from Linux. Just don't do it.
+
+Copy/paste the models from your local webui install if you already have them, or download directly to the folder if you don't want them on your local machine. Make sure the model names exactly match the way they are referenced in your git repository code. If not, they will not load.
+
+```bash
 # Build and tag the image
-docker build -t username/image-name:1.0.0 .
+docker build stable-diffusion-docker-Improved -t ylfrs/sd-kohya-comfy-improved:1.0.0
+
+```
 
 # Log in to Docker Hub
 docker login
