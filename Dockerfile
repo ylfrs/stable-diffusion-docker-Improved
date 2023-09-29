@@ -7,7 +7,7 @@ ARG KOHYA_VERSION=v21.8.10
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ENV DEBIAN_FRONTEND=noninteractive \
-    TZ=Africa/Johannesburg \
+    America/New_York \
     PYTHONUNBUFFERED=1 \
     SHELL=/bin/bash
 
