@@ -137,8 +137,6 @@ RUN source /venv/bin/activate && \
     pip3 install -r requirements.txt && \
     cd /stable-diffusion-webui/extensions/sd-webui-infinite-image-browsing && \
     pip3 install -r requirements.txt && \
-    cd /stable-diffusion-webui/extensions/batchlinks-webui && \
-    python -m install && \
     cd /stable-diffusion-webui/extensions/adetailer && \
     python -m install && \
     deactivate
