@@ -56,7 +56,7 @@ Create a dummy folder on your machine so that you don't clutter things up. Anywh
 
 ```bash
 # Clone the repo into this folder
-cd User/You/DummyFolder
+cd Users/Your/DummyFolder
 git clone https://github.com/ylfrs/stable-diffusion-docker-Improved.git
 ```
 The repo link should be your modified repository. 
@@ -67,11 +67,17 @@ DON'T use wget to download the models into the folder. It's slow, and as I had t
 
 Copy/paste the models from your local webui install if you already have them, or download directly to the folder if you don't want them on your local machine. Make sure the model names exactly match the way they are referenced in your git repository code. If not, they will not load.
 
+#Building the image
+
+Now that you've got all your goodies in one basket, it's time to build the image:
+
+Make sure Docker Desktop is running, and use the following command
+
 ```bash
 # Build and tag the image
 docker build stable-diffusion-docker-Improved -t ylfrs/sd-kohya-comfy-improved:1.0.0
-
 ```
+the tag (everything after "-t" in the line above) is completely up to you, name it whatever you want. 
 
 # Log in to Docker Hub
 docker login
