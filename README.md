@@ -43,7 +43,7 @@ Now with SDXL support.
 This image is designed to work on [RunPod](https://runpod.io). It's a slightly modified version of [ashleykleynhan's stable-diffusion-docker](
 ttps://github.com/ashleykleynhans/stable-diffusion-docker), which can be run directly from [Runpod here](https://runpod.io/gsc?template=ya6013lj5a&ref=2xxro4sy)
 
-## How to actually build the Docker image in Windows
+##Build the Docker image in Windows
 
 Since the Stable Diffusion models are pretty large, you will need at least
 8GB of system memory (not GPU VRAM) to build this image.
