@@ -67,7 +67,7 @@ DON'T use wget to download the models into the folder. It's slow, and as I had t
 
 Copy/paste the models from your local webui install if you already have them, or download directly to the folder if you don't want them on your local machine. Make sure the model names exactly match the way they are referenced in your git repository code. If not, they will not load.
 
-#Building the image
+# Build the image
 
 Now that you've got all your goodies in one basket, it's time to build the image:
 
