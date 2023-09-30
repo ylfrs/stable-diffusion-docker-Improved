@@ -75,16 +75,20 @@ Make sure Docker Desktop is running, and use the following command
 
 ```bash
 # Build and tag the image
-docker build stable-diffusion-docker-Improved -t ylfrs/sd-kohya-comfy-improved:1.0.0
+docker build stable-diffusion-docker-Improved -t username/image-name:1.0.0
 ```
 the tag (everything after "-t" in the line above) is completely up to you, name it whatever you want. 
 
-# Log in to Docker Hub
-docker login
+# Open Docker Desktop
+
+Make sure to have Docker Desktop running, and make sure it's not running on resource saver mode. 
 
 # Push the image to Docker Hub
+
+```bash
 docker push username/image-name:1.0.0
 ```
+Resist the temptation to scroll inside the command line after executing this command, as this will cause Docker to print status bars all over, making it difficult to check on the progress of items. Depending on how large your image is, this process could take hours. It failed the first time I tried it. If it fails, delete the Docker repository and push the image again. 
 
 ## Running Locally
 
