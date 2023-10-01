@@ -82,7 +82,6 @@ RUN mkdir -p /sd-models
 COPY sd_xl_base_1.0_0.9vae.safetensors /sd-models/sd_xl_base_1.0_0.9vae.safetensors
 COPY sd_xl_refiner_1.0_0.9vae.safetensors /sd-models/sd_xl_refiner_1.0_0.9vae.safetensors
 COPY sdxl_vae.safetensors /sd-models/sdxl_vae.safetensors
-COPY realvisxlV20_v20Bakedvae.safetensors /sd-models/realvisxlV20_v20Bakedvae.safetensors
 
 # Clone the git repo of the Stable Diffusion Web UI by Automatic1111
 # and set version
@@ -110,7 +109,6 @@ RUN source /venv/bin/activate && \
 RUN source /venv/bin/activate && \
     python3 cache-sd-model.py --use-cpu=all --ckpt /sd-models/sd_xl_base_1.0_0.9vae.safetensors && \
     python3 cache-sd-model.py --use-cpu=all --ckpt /sd-models/sd_xl_refiner_1.0_0.9vae.safetensors && \
-    python3 cache-sd-model.py --use-cpu=all --ckpt /sd-models/realvisxlV20_v20Bakedvae.safetensors && \
     deactivate
 
 # Clone the Automatic1111 Extensions
